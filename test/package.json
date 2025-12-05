@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.53.1",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.15",
     "npm-run-all2": "^8.0.4",
     "playwright-chromium": "^1.53.1",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.15"
   }
 }
