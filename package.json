@@ -64,7 +64,8 @@
     "prettier": "^3.2.5",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.6.3",
-    "typescript-plugin-css-modules": "^5.1.0"
+    "typescript-plugin-css-modules": "^5.1.0",
+    "@voidzero-dev/vite-plus": "catalog:"
   },
   "pnpm": {
     "overrides": {
@@ -85,11 +86,6 @@
       "@uidotdev/usehooks>react-dom": "0.0.0-experimental-7dc903cd-20251203",
       "@vercel/analytics>react": "0.0.0-experimental-7dc903cd-20251203",
       "@vercel/speed-insights>react": "0.0.0-experimental-7dc903cd-20251203",
-      "vite": "npm:rolldown-vite@7.0.12",
-      "vite-plugin-inspect>vite": "npm:rolldown-vite@7.0.12",
-      "vite-plugin-svgr>vite": "npm:rolldown-vite@7.0.12",
-      "@vitejs/plugin-react>vite": "npm:rolldown-vite@7.0.12",
-      "@vitejs/plugin-react-swc>vite": "npm:rolldown-vite@7.0.12",
       "supertest>superagent": "9.0.2"
     }
   },

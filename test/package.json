@@ -3,10 +3,10 @@
   "private": true,
   "scripts": {
     "test": "run-s test-dev test-build-start",
-    "test-dev": "vitest run -c ./vitest.config.mjs",
-    "test-build-start": "vitest run -c ./vitest.config.build.mjs",
-    "test-dev-ui": "vitest -c ./vitest.config.mjs --ui",
-    "test-build-start-ui": "vitest -c ./vitest.config.build.mjs --ui",
+    "test-dev": "vite test run -c ./vitest.config.mjs",
+    "test-build-start": "vite test run -c ./vitest.config.build.mjs",
+    "test-dev-ui": "vite test -c ./vitest.config.mjs --ui",
+    "test-build-start-ui": "vite test -c ./vitest.config.build.mjs --ui",
     "test-dev-base": "pnpm test-dev --exclude '**/__test__/apps'",
     "test-dev-apps": "pnpm test-dev --exclude '**/__test__/*.spec.mjs'",
     "test-build-start-base": "pnpm test-build-start --exclude '**/__test__/apps'",
@@ -19,13 +19,15 @@
     "rolldown": "1.0.0-beta.30",
     "tinyglobby": "^0.2.13",
     "unstorage": "^1.16.0",
-    "vite": "npm:rolldown-vite@7.0.12"
+    "vite": "catalog:"
   },
   "devDependencies": {
     "@playwright/test": "^1.53.1",
+    "@vitest/browser-playwright": "^4.0.15",
     "@vitest/ui": "^4.0.15",
+    "@voidzero-dev/vite-plus": "catalog:",
     "npm-run-all2": "^8.0.4",
     "playwright-chromium": "^1.53.1",
-    "vitest": "^4.0.15"
+    "vitest": "catalog:"
   }
 }
