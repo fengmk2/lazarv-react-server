@@ -13,3 +13,17 @@ onlyBuiltDependencies:
   - esbuild
   - playwright-chromium
   - simple-git-hooks
+catalog:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
+  vitest: npm:@voidzero-dev/vite-plus-test@latest
+  "@voidzero-dev/vite-plus": latest
+overrides:
+  vite: "catalog:"
+  vitest: "catalog:"
+peerDependencyRules:
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: "*"
+    vitest: "*"
