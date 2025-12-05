@@ -23,10 +23,11 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.53.1",
+    "@vitest/browser-playwright": "^4.0.15",
     "@vitest/ui": "^4.0.15",
+    "@voidzero-dev/vite-plus": "catalog:",
     "npm-run-all2": "^8.0.4",
     "playwright-chromium": "^1.53.1",
-    "vitest": "catalog:",
-    "@voidzero-dev/vite-plus": "catalog:"
+    "vitest": "catalog:"
   }
 }
