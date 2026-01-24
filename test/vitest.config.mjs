@@ -25,8 +25,8 @@ export default defineConfig({
     reporters: process.env.GITHUB_ACTIONS
       ? ["verbose", "github-actions"]
       : ["default"],
-    pool: "forks",
-    fileParallelism: !process.env.CI,
+    pool: "threads",
+    singleThread: !!process.env.CI, // When in CI, run single-threaded to match original fileParallelism: !process.env.CI
     retry: 3,
   },
   publicDir: false,

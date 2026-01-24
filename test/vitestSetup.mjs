@@ -1,11 +1,13 @@
 import { createHash } from "node:crypto";
 import { readdir, rm } from "node:fs/promises";
+import fs from "node:fs/promises";
 import { dirname, join } from "node:path";
+import path from "node:path";
 import { afterEach } from "node:test";
 import { Worker } from "node:worker_threads";
 
 import { chromium } from "playwright-chromium";
-import { afterAll, beforeAll, inject } from "vitest";
+import { afterAll, beforeAll } from "vitest";
 
 export let browser;
 export let httpServer;
@@ -63,8 +65,20 @@ async function cleanup() {
   }
 }
 
+// Path to the shared endpoint file
+const endpointFilePath = path.resolve(process.cwd(), ".wsEndpoint");
+
 beforeAll(async ({ name, id }) => {
-  const wsEndpoint = inject("wsEndpoint");
+  // Read the wsEndpoint from the shared file
+  let wsEndpoint;
+  try {
+    wsEndpoint = await fs.readFile(endpointFilePath, "utf8");
+  } catch (error) {
+    throw new Error(
+      `Failed to read WebSocket endpoint from ${endpointFilePath}: ${error.message}`
+    );
+  }
+
   browser = await chromium.connect(wsEndpoint);
   page = await browser.newPage();
   page.on("console", (msg) => {
