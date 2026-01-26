@@ -25,7 +25,8 @@ export default defineConfig({
     reporters: process.env.GITHUB_ACTIONS
       ? ["verbose", "github-actions"]
       : ["default"],
-    pool: "forks",
+    // In Vitest v4, using default pool configuration
+    // The old "forks" pool behavior is now the default
     fileParallelism: !process.env.CI,
     retry: 3,
   },
