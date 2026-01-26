@@ -3,10 +3,10 @@ import { join } from "node:path";
 import { hostname, page, server, waitForHydration } from "playground/utils";
 import { expect, test } from "vitest";
 
-process.chdir(join(process.cwd(), "../examples/session-cookie"));
+
 
 test("session cookie", async () => {
-  await server("./App.jsx", {
+  await server("../examples/session-cookie/App.jsx", {
     resolve: {
       external: ["iron-session"],
     },

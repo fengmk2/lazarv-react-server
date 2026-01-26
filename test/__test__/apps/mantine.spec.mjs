@@ -10,7 +10,7 @@ import {
 } from "playground/utils";
 import { expect, test } from "vitest";
 
-process.chdir(join(process.cwd(), "../examples/mantine"));
+
 
 test(
   "mantine and extensions",
@@ -18,7 +18,7 @@ test(
     timeout: 360000,
   },
   async () => {
-    await server(null);
+    await server("../examples/mantine");
     let res = await page.goto(hostname, { timeout: 60000 });
 
     // TODO: I don't like this, but it's a workaround for an async dependency optimization issue in development mode

@@ -4,11 +4,11 @@ import { hostname, page, server, waitForHydration } from "playground/utils";
 import { describe } from "vitest";
 import { beforeAll, expect, test } from "vitest";
 
-process.chdir(join(process.cwd(), "../examples/module-resolution"));
+
 
 describe("module-resolution example", {}, () => {
   beforeAll(async () => {
-    await server("./App.jsx");
+    await server("../examples/module-resolution/App.jsx");
   });
 
   test("iron-session loads", async () => {

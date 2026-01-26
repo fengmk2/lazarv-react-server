@@ -3,10 +3,10 @@ import { join } from "node:path";
 import { hostname, page, server, waitForHydration } from "playground/utils";
 import { expect, test } from "vitest";
 
-process.chdir(join(process.cwd(), "../examples/react-modal"));
+
 
 test("react-modal load", async () => {
-  await server("./App.jsx");
+  await server("../examples/react-modal/App.jsx");
   await page.goto(hostname);
   await page.waitForLoadState("networkidle");
   await waitForHydration();
