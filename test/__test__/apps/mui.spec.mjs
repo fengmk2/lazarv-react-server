@@ -3,10 +3,10 @@ import { join } from "node:path";
 import { hostname, page, server, waitForHydration } from "playground/utils";
 import { expect, test } from "vitest";
 
-
+process.chdir(join(process.cwd(), "../examples/mui"));
 
 test("mui load", async () => {
-  await server("../examples/mui");
+  await server(null);
   await page.goto(hostname);
   await page.waitForLoadState("networkidle");
   await page.waitForSelector("text=/Material UI/", { state: "visible" });

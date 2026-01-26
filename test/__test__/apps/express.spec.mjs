@@ -9,10 +9,10 @@ import {
 } from "playground/utils";
 import { expect, test } from "vitest";
 
-
+process.chdir(join(process.cwd(), "../examples/express"));
 
 test("express load", async () => {
-  await server("../examples/express/src/app/index.jsx", undefined, "/react-server/");
+  await server("./src/app/index.jsx", undefined, "/react-server/");
   await page.goto(hostname + "/react-server/");
   await waitForHydration();
   expect(await page.textContent("body")).toContain("Hello World!");

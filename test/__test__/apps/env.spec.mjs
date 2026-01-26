@@ -3,11 +3,11 @@ import { join } from "node:path";
 import { hostname, page, server } from "playground/utils";
 import { expect, test } from "vitest";
 
-
+process.chdir(join(process.cwd(), "../examples/env"));
 process.env.REACT_SERVER_VALUE = "1";
 
 test("env load", async () => {
-  await server("../examples/env/App.jsx");
+  await server("./App.jsx");
   await page.goto(hostname);
 
   const bodyText = await page.textContent("body");

@@ -4,10 +4,10 @@ import { expect } from "@playwright/test";
 import { hostname, page, server, waitForHydration } from "playground/utils";
 import { test } from "vitest";
 
-
+process.chdir(join(process.cwd(), "../examples/react-query"));
 
 test("react-query load", async () => {
-  await server("../examples/react-query");
+  await server(null);
   await page.goto(hostname);
   await page.waitForLoadState("networkidle");
   await waitForHydration();

@@ -3,10 +3,10 @@ import { join } from "node:path";
 import { hostname, page, server, waitForHydration } from "playground/utils";
 import { expect, test } from "vitest";
 
-
+process.chdir(join(process.cwd(), "../examples/chakra-ui"));
 
 test("chakra-ui load", async () => {
-  await server("./../examples/chakra-ui");
+  await server(null);
   await page.goto(hostname);
   await page.waitForLoadState("networkidle");
 
