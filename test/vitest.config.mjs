@@ -22,9 +22,11 @@ export default defineConfig({
         return false;
     },
     testTimeout: 60000,
-    reporters: ["verbose"],
-    pool: "threads",
-    maxWorkers: process.env.CI ? 1 : undefined,
+    reporters: process.env.GITHUB_ACTIONS
+      ? ["verbose", "github-actions"]
+      : ["default"],
+    pool: "forks",
+    fileParallelism: !process.env.CI,
     retry: 3,
   },
   publicDir: false,
